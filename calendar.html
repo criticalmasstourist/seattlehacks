@@ -31,7 +31,10 @@ $(document).ready(function() {
         $('<h2>' + moment(day).format('MMMM Do') + '</h2>').appendTo('#calendar');
         groups[day].forEach(function(event) {
           console.log("event", event);
-          $('<div class="event"><div class="title"><a href="' + event.url + '">' + event.name + ' @ ' + event.venue  + '</a></div><div class="timing">' + moment(event.start).format('h:mm a') + ' - ' + moment(event.end).format('h:mm a') + '</div></div>').appendTo('#calendar');
+          $('<div class="event">'
+            + '<div class="title"><a href="' + event.url + '">' + event.name + ' @ ' + event.venue  + '</a></div>'
+            + '<div class="timing">' + moment(event.start).format('h:mm a', "YYYY-MM-DD HH:mm:ss Z") + ' - ' + moment(event.end).format('h:mm a', "YYYY-MM-DD HH:mm:ss Z") + '</div>'
+            + '</div>').appendTo('#calendar');
         });
       }
     });    
