@@ -1,11 +1,11 @@
 ---
-title: Seattle Code Camp 2014
+title: Seattle Code Camp 2015
 author: JaimeLynSchatz
 layout: post
-event-name: Seattle Code Camp 2014
+event-name: Seattle Code Camp 2015
 event-allday: false
-event-start: 2014-09-13 08:00:00
-event-end: 2014-09-13 17:00:00
+event-start: 2015-02-26 08:00:00
+event-end: 2015-02-26 17:00:00
 event-venue: Seattle University
 event-address: 901 12th Avenue, Seattle, WA
 event-website: https://seattle.codecamp.us/
