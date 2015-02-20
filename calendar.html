@@ -20,7 +20,7 @@ $(document).ready(function() {
     moment().local();
     var groups = _.groupBy(response.events, function(event) {
       console.log("event start:", event.start);
-      console.log("event parsed:", moment(event.start).format('YYYY-MM-DD'))
+      console.log("event parsed:", moment(event.start, "YYYY-MM-DD HH:mm:ss Z").format('YYYY-MM-DD'))
       return moment(event.start).format('YYYY-MM-DD');
     }); 
     console.log("groups", groups);
