@@ -21,6 +21,7 @@ $(document).ready(function() {
     days = _.sortBy(Object.keys(groups), function(day) { return day });
     days.forEach(function(day) {
       if (moment(day).isAfter(moment().subtract('days', 1))) {
+        console.log("found event", event)
         $('<h2>' + moment(day).format('MMMM Do') + '</h2>').appendTo('#calendar');
         groups[day].forEach(function(event) {
           $('<div class="event"><div class="title"><a href="' + event.url + '">' + event.name + ' @ ' + event.venue  + '</a></div><div class="timing">' + moment(event.start).format('h:mm a') + ' - ' + moment(event.end).format('h:mm a') + '</div></div>').appendTo('#calendar');
