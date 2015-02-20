@@ -18,15 +18,19 @@ $(document).ready(function() {
   $.getJSON('/seattlehacks/api/cal.json', null, function(response) {
     console.log("ajax response")
     moment().local();
-    var groups = _.groupBy(response.events, function(event) { return moment(event.start).format('YYYY-MM-DD'); }); 
-    console.log("groups", groups)
+    var groups = _.groupBy(response.events, function(event) {
+      console.log("event start:", event.start);
+      console.log("event parsed:", moment(event.start).format('YYYY-MM-DD'))
+      return moment(event.start).format('YYYY-MM-DD');
+    }); 
+    console.log("groups", groups);
     days = _.sortBy(Object.keys(groups), function(day) { return day });
     days.forEach(function(day) {
-      console.log("day", day)
+      console.log("day", day);
       if (moment(day).isAfter(moment().subtract('days', 1))) {
         $('<h2>' + moment(day).format('MMMM Do') + '</h2>').appendTo('#calendar');
         groups[day].forEach(function(event) {
-          console.log("event", event)
+          console.log("event", event);
           $('<div class="event"><div class="title"><a href="' + event.url + '">' + event.name + ' @ ' + event.venue  + '</a></div><div class="timing">' + moment(event.start).format('h:mm a') + ' - ' + moment(event.end).format('h:mm a') + '</div></div>').appendTo('#calendar');
         });
       }
