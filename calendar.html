@@ -33,7 +33,7 @@ $(document).ready(function() {
           console.log("event", event);
           $('<div class="event">'
             + '<div class="title"><a href="' + event.url + '">' + event.name + ' @ ' + event.venue  + '</a></div>'
-            + '<div class="timing">' + moment(event.start).format('h:mm a', "YYYY-MM-DD HH:mm:ss Z") + ' - ' + moment(event.end).format('h:mm a', "YYYY-MM-DD HH:mm:ss Z") + '</div>'
+            + '<div class="timing">' + moment(event.start, "YYYY-MM-DD HH:mm:ss Z").format('h:mm a') + ' - ' + moment(event.end, "YYYY-MM-DD HH:mm:ss Z").format('h:mm a') + '</div>'
             + '</div>').appendTo('#calendar');
         });
       }
