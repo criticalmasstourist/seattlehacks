@@ -2,8 +2,8 @@ meta:
   site_title: "Seattle Hacks"
   site_subtitle: "For Seattle developers, by Seattle developers"
   site_language: "en"
-  absolute_baseurl: http://seattlehacks.com
-  domain: seattlehacks.com
+  absolute_baseurl: http://criticalmasstourist.github.io/seattlehacks/
+  domain: criticalmasstourist.github.io
   author:
     full_name: Carter Rabasa
     short_name: crabasa
